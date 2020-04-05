@@ -1,0 +1,33 @@
+## API specification
+Attention: this API is only for testing, so is created without a defined scope
+This API will manage a shopping list
+
+## API requests
+    # GET /shopping_list
+    Response:
+    {
+        "count": <number of elements in the shopping list>,
+        "data": [
+            {
+                "name": <object name>,
+                "quantity": <quantity to buy>
+            },
+            {
+                "name": <object name>,
+                "quantity": <quantity to buy>
+            },
+            ...
+        ]
+    }
+    
+    # POST /shopping_list/add   
+    Request arguments:
+    "name": <name of the product>
+    "quantity": <quantity to add>
+    Response:
+    {
+        //the result of the operation can be one of this value: added_new, added_quantity, error
+        "result": <result of the operation>
+        "name": <name of the product>
+        "quantity": <quantity in the list after the insertion>
+    }
